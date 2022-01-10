@@ -26,6 +26,7 @@ public class MainFrame extends JFrame{
 		eventSetup();
 		panel.add(hb);
 		panel.add(hm);
+		hm.setMonochromaticColor();
 		add(panel);
 	}
 	
