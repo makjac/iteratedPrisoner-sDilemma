@@ -8,3 +8,4 @@ bin/
 .settings/
 .classpath
 .project
+src/module-info.java
