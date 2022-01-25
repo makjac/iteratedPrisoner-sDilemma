@@ -9,7 +9,7 @@ Author:
 
 ## Introduction
 
-Imagine two people being interrogated. Both interrogators are suspected of committing some crime. There comes a moment when the detective asks them a question: who did the crime? Każdy przesłuchiwany ma do wyboru 2 opcje: pierwsza (współpraca), może się nie przyznać i milczeć na zadane mu pytanie, lub drufa obcja (wada) może zrzucić winę na przeciwnika. Each interrogator does not know what decision his opponent will make.
+Imagine two people being interrogated. Both interrogators are suspected of committing some crime. There comes a moment when the detective asks them a question: who did the crime? Each interrogator has 2 choices: the first (cooperation), they can choose not to confess and remain silent to the question they are asked, or the second option (disadvantage) they can blame it on their opponent. Each interrogator does not know what decision his opponent will make.
 
 There are four possibilities for the interrogation to end:
 
