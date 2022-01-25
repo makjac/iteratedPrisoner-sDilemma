@@ -5,7 +5,6 @@ import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-
 import IPD.*;
 
 public class MainFrame extends JFrame{
@@ -36,6 +35,22 @@ public class MainFrame extends JFrame{
 		add(panel);
 	}
 	
+	public MainFrame()
+	{
+		super("Prisoners dilemma");
+		p = new Player();
+		setSize(420, 440);
+		setVisible(true);
+		JPanel panel = new JPanel();
+		//panel.add(coopBut);
+		//panel.add(defBut);
+		eventSetup();
+		//panel.add(hb);
+		panel.add(startBut);
+		panel.add(hm);
+		add(panel);
+	}
+	
 	void move(boolean choice)
 	{
 		boolean c = p.choice();
@@ -45,11 +60,9 @@ public class MainFrame extends JFrame{
 	
 	void printData() throws FileNotFoundException, UnsupportedEncodingException
 	{
-		int score;
 		try (PrintWriter writer = new PrintWriter("mainData.txt", "UTF-8")) {
 			for(int i=0; i<32; i++)
 			{
-				score = 0;
 				writer.print(hm.getYaxisLabel(i));
 				for(int j=0; j<32; j++)
 				{
@@ -93,7 +106,6 @@ public class MainFrame extends JFrame{
 				try {
 					printData();
 				} catch (FileNotFoundException | UnsupportedEncodingException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}});

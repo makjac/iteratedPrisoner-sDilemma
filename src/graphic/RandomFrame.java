@@ -5,7 +5,6 @@ import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-
 import IPD.*;
 
 
@@ -40,11 +39,9 @@ public class RandomFrame extends JFrame{
 	
 	void printData() throws FileNotFoundException, UnsupportedEncodingException
 	{
-		int score;
-		try (PrintWriter writer = new PrintWriter("mainData.txt", "UTF-8")) {
+		try (PrintWriter writer = new PrintWriter("RandomData.txt", "UTF-8")) {
 			for(int i=0; i<512; i++)
 			{
-				score = 0;
 				writer.print(hm.getYaxisLabel(i));
 				for(int j=0; j<512; j++)
 				{

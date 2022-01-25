@@ -8,4 +8,4 @@
 ##Pictures
 ![Image 1](HitMapColors.png)
 ![Image 2](generationfrom0to100.gif)
-![Image 3](PID.svg)
+![Image 3](IPD.svg)
