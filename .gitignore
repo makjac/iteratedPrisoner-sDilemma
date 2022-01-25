@@ -1,5 +1,7 @@
 mainData.txt
 RandomData.txt
-strategies/
-graphics/HistoryBar.java
-IPD/player.java
+src/strategies/
+src/graphics/HistoryBar.java
+src/IPD/player.java
+bin/IPD/Prisoner.class
+bin/strategies/
