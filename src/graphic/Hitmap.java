@@ -14,6 +14,7 @@ public class Hitmap extends JPanel{
 	String[] YaxisLabels;
 	int XaxisSize, YaxisSize;
 	String color;
+	boolean countur = true;
 	
 	//----constructors----
 	Hitmap() 
@@ -22,7 +23,7 @@ public class Hitmap extends JPanel{
 		temp = new int[elem][elem];
 		XaxisLabels = new String[elem];
 		YaxisLabels = new String[elem];
-		XaxisSize = YaxisSize = 80;
+		XaxisSize = YaxisSize = 40;
 		zeros();
 		setSize(10*elem + XaxisSize + 1, 10*elem + YaxisSize + 1);
 		sWidth = sHeight = 10;
@@ -69,6 +70,21 @@ public class Hitmap extends JPanel{
 		sHeight = super.getHeight() / elem;
 		color = "blue";
 	}
+	
+	Hitmap(int elements, int width, int height, boolean c)
+	{
+		elem = elements;
+		temp = new int[elem][elem];
+		XaxisLabels = new String[elem];
+		YaxisLabels = new String[elem];
+		XaxisSize = YaxisSize = 0;
+		zeros();
+		setSize(width + 50 + 1, height + 50 + 1);
+		sWidth = super.getWidth() / elem;
+		sHeight = super.getHeight() / elem;
+		color = "blue";
+		countur = c;
+	}
 	//----end constructors----
 	
 	//-----getters------
@@ -98,8 +114,8 @@ public class Hitmap extends JPanel{
 		{
 			
 			int x = 255-temp[i][j];
-			/*if(maxVal != 0) x = 255-(int)(255*((float)temp[i][j]/(float)maxVal));
-			else x=255;*/
+			if(maxVal != 0) x = 255-(int)(255*((float)temp[i][j]/(float)maxVal));
+			else x=255;
 			Color c;
 			switch(color)
 			{
@@ -138,7 +154,7 @@ public class Hitmap extends JPanel{
 	 * @param i - matrix column index
 	 * @param j - matrix row index
 	 * */
-	boolean setValue(int value, int i, int j)
+	boolean setValue(int value, int j, int i)
 	{
 		if((i>=0 && i<elem) && (j>=0 && j<elem))
 		{
@@ -155,11 +171,13 @@ public class Hitmap extends JPanel{
 	{
 		for(int i=0; i<elem; i++)
 			for(int j=0; j<elem; j++)
-				temp[i][j] = (int)(Math.random()*100);
+				setValue(0, i, j);
+				//setValue(0, i, j);
+		//maxVal = 0;
 		for(int i=0; i<elem; i++)
 		{
-			XaxisLabels[i] = "shgahgejhafgjh";
-			YaxisLabels[i] = "adwhgfhafuyug";
+			XaxisLabels[i] = "xLabel" + (i+1);
+			YaxisLabels[i] = "yLabel" + (i+1);
 		}
 	}
 	
@@ -190,8 +208,11 @@ public class Hitmap extends JPanel{
 			{
 				g2d.setColor(getColor(i, j));
 				g2d.fillRect(sWidth*j+XaxisSize, sHeight*i+YaxisSize, sWidth, sHeight);
+				if(countur)
+				{
 				g2d.setColor(Color.black);
 				g2d.drawRect(sWidth*j+XaxisSize, sHeight*i+YaxisSize, sWidth, sHeight);
+				}
 			}
 	}
 	
@@ -199,6 +220,7 @@ public class Hitmap extends JPanel{
 	{
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
+		if(countur)
 		printLabels(g2d);
 		printMatrix(g2d);
 		g2d.setColor(Color.black);
@@ -208,5 +230,7 @@ public class Hitmap extends JPanel{
 		} catch(InterruptedException t) {}
 		repaint();
 	}
+	
+	
 	
 }

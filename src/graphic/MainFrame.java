@@ -10,7 +10,9 @@ public class MainFrame extends JFrame{
 	
 	JButton coopBut = new JButton("cooperate");
 	JButton defBut = new JButton("defect");
+	JButton startBut = new JButton("start");
 	static HistoryBar hb = new HistoryBar();
+	Game game = new Game();
 	Hitmap hm = new Hitmap();
 	Player p;
 	
@@ -18,15 +20,15 @@ public class MainFrame extends JFrame{
 	{
 		super("Prisoners dilemma");
 		p = P;
-		setSize(450, 520);
+		setSize(420, 440);
 		setVisible(true);
 		JPanel panel = new JPanel();
-		panel.add(coopBut);
-		panel.add(defBut);
+		//panel.add(coopBut);
+		//panel.add(defBut);
 		eventSetup();
-		panel.add(hb);
+		//panel.add(hb);
+		panel.add(startBut);
 		panel.add(hm);
-		hm.setMonochromaticColor();
 		add(panel);
 	}
 	
@@ -49,6 +51,22 @@ public class MainFrame extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				move(false);
+			}});
+		startBut.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("START!!!");
+				for(int i=0; i<32; i++)
+				{
+					game.setPlayer1(i);
+					hm.setXYaxisLabel(i, game.getPlayer1Name());
+					for(int j=0; j<32; j++)
+					{
+						game.setPlayer2(j);
+						game.play();
+						hm.setValue(game.getPalyer1FScore(), i, j);
+					}
+				}
 			}});
 	}
 
