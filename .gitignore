@@ -5,3 +5,6 @@ src/graphic/HistoryBar.java
 src/IPD/Player.java
 bin/IPD/Player.class
 bin/
+.settings/
+.classpath
+.project
