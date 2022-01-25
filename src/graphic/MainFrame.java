@@ -11,51 +11,20 @@ public class MainFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	
-	JButton coopBut = new JButton("cooperate");
-	JButton defBut = new JButton("defect");
 	JButton startBut = new JButton("start");
-	static HistoryBar hb = new HistoryBar();
-	Game game = new Game();
+	Game game = new Game(100);
 	Hitmap hm = new Hitmap();
-	Player p;
-	
-	public MainFrame(Player P)
-	{
-		super("Prisoners dilemma");
-		p = P;
-		setSize(420, 440);
-		setVisible(true);
-		JPanel panel = new JPanel();
-		//panel.add(coopBut);
-		//panel.add(defBut);
-		eventSetup();
-		//panel.add(hb);
-		panel.add(startBut);
-		panel.add(hm);
-		add(panel);
-	}
 	
 	public MainFrame()
 	{
 		super("Prisoners dilemma");
-		p = new Player();
 		setSize(420, 440);
 		setVisible(true);
 		JPanel panel = new JPanel();
-		//panel.add(coopBut);
-		//panel.add(defBut);
 		eventSetup();
-		//panel.add(hb);
 		panel.add(startBut);
 		panel.add(hm);
 		add(panel);
-	}
-	
-	void move(boolean choice)
-	{
-		boolean c = p.choice();
-		p.newElement(c, choice);
-		hb.addChoice(c, choice);
 	}
 	
 	void printData() throws FileNotFoundException, UnsupportedEncodingException
@@ -77,17 +46,6 @@ public class MainFrame extends JFrame{
 	
 	void eventSetup()
 	{
-		coopBut.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				move(true);
-			}});
-		
-		defBut.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				move(false);
-			}});
 		startBut.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
