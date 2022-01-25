@@ -13,6 +13,6 @@ public class Prisoners_dilemma {
 	public static void main(String[] args) {
 		Player p = new LTFT();
 		new MainFrame(p);
-		//new RandomFrame();
+		new RandomFrame();
 	}
 }

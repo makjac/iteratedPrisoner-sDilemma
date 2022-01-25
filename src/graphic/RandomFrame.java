@@ -2,6 +2,10 @@ package graphic;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
 import IPD.*;
 
 
@@ -12,13 +16,13 @@ public class RandomFrame extends JFrame{
 	JSlider chanceSlid = new JSlider(0, 100, 50);
 	JButton startBut = new JButton("start");
 	Game game = new Game();
-	Hitmap hm = new Hitmap(512, 1000, 1000, false);
+	Hitmap hm = new Hitmap(512, 600, 600, false);
 	RandomPrisoner rp;
 	
 	public RandomFrame()
 	{
 		super("Random Prisoners dilemma");
-		setSize(1050, 1050);
+		setSize(1050, 600);
 		setVisible(true);
 		JPanel panel = new JPanel();
 		panel.add(startBut);
@@ -32,6 +36,25 @@ public class RandomFrame extends JFrame{
 		panel.add(hm);
 		eventSetup();
 		add(panel);
+	}
+	
+	void printData() throws FileNotFoundException, UnsupportedEncodingException
+	{
+		int score;
+		try (PrintWriter writer = new PrintWriter("mainData.txt", "UTF-8")) {
+			for(int i=0; i<512; i++)
+			{
+				score = 0;
+				writer.print(hm.getYaxisLabel(i));
+				for(int j=0; j<512; j++)
+				{
+					//score = score + hm.getValue(i, j);
+					writer.print(" " + hm.getValue(j, i));
+				}
+				writer.println("");
+				//writer.print(hm.getYaxisLabel(i) + " " + score);
+			}
+		}
 	}
 	
 	void eventSetup()
@@ -53,6 +76,12 @@ public class RandomFrame extends JFrame{
 						game.play();
 						hm.setValue(game.getPalyer1FScore(), i, j);
 					}
+				}
+				try {
+					printData();
+				} catch (FileNotFoundException | UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}});
 	}
