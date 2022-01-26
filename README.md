@@ -50,9 +50,10 @@ Strategies that respond to an opponent's betrayal with treachery do much better 
 
 ![Image 4](question2.png)
 
+In the chart, I have presented how the development of each strategy looks like.
+
 ![Image 5](IPD.svg)
 
-In the chart, I have presented how the development of each strategy looks like.
 ## Random One-step memory
 ## Random One-step memory results
 
