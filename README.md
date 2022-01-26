@@ -34,7 +34,7 @@ After performing the calculations, the program presents the result as a heatmap.
 
 ![Image 2](mainResault.png)
 
-The program also Saves the result as a matrix to a file named "mainData.txt". I further analyzed the data using Libre calc.
+The program also Saves the result as a matrix to a file named "mainData.txt". I further analyzed the data using Excel.
 
 - How are kind strategies (those that start with C) doing?
 
@@ -47,14 +47,16 @@ Polite strategies perform worse than malicious strategies. The reason for this m
 - How do strategies that respond to an opponent's betrayal in the past fare? And how do those that respond to betrayal with cooperation?
 
 Strategies that respond to an opponent's betrayal with treachery do much better than those that respond to betrayal with cooperation. This is because some strategies take advantage of the naivety of tactics that respond with cooperation by always betraying them.
-
 ![Image 4](question2.png)
 
 In the chart, I have presented how the development of each strategy looks like.
 
 ![Image 5](IPD.svg)
-
 ## Random One-step memory
+
+To add randomness, I decided to give tactics a choice. As for the 4 possible situations (dd, dc, cd, cc) the strategy has 4 possible answers (P, T, S, R), so now I added 4 more possible answers. So now For 4 possible events, the strategy has 8 possible responses (for DD response P1 and P2, for DC response T1 and T2, for CD response S1 and S2, for CC response R1 and R2). This change increases the number of possible tactics from 32 to as many as 512 possibilities. Which answer a player chooses (for example P1 or P2) will depend on the "chance" parameter. The player first draws a real number x from the range 0 < x < 1. If the number drawn is less than the "chance" parameter, the player will choose an answer with index 1, and if the number x is greater than the "chance" parameter, the player will choose an answer with index 2.
+
 ## Random One-step memory results
 
-![Image 4](generationfrom0to100.gif)
+![Image 6](generationfrom0to100.gif)
+
