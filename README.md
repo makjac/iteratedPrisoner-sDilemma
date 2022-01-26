@@ -27,10 +27,10 @@ This is a single prisoner's dilemma problem. In its iterated variant, players pl
 ## One-step memory
 
 For IPD with one step memory, each strategy can be specified by the response (C or D) a player will take according to the last round played. Furthermore, the game requires the specification of the initial move  of  the  players.  In  each  round  of  game  between  two  players,  there  are  four  possible  outcomes  
-((“my  move”      “opponent’s  move”)=DD,  DC,  CD,CC)  with  the  immediate  payoffs  P,  T,  S  and  R, respectively. In the context of one step memory, a player can recall his opponent's and his own strategy in  the  past  one  round.  They  can  have  responses  in  terms  of  strategy  ࣭Sp, St, Ss and Sr  for  the  DD, DC,  CD  and  CC  in  the  previous  step  respectively.  Together  with  the  initial  move  ࣭଴,  we  can  encode  the strategy of IPD with one step memory by the following notation: S0|SpStSsSr. For example, GT is C|DDDC  and  Pavlov  is  C|CDDC.  Since  a  strategy  is  denoted  by S0|SpStSsSr which  have  five  bits and each slot encoded by either C or D, therefore, there are a total of 32 possible strategies in the strategy space Ms IPD with one step memory. 
+((“my  move”      “opponent’s  move”)=DD,  DC,  CD,CC)  with  the  immediate  payoffs  P,  T,  S  and  R, respectively. In the context of one step memory, a player can recall his opponent's and his own strategy in  the  past  one  round.  They  can  have  responses  in  terms  of  strategy  ࣭Sp, St, Ss and Sr  for  the  DD, DC,  CD  and  CC  in  the  previous  step  respectively.  Together  with  the  initial  move S0,  we  can  encode  the strategy of IPD with one step memory by the following notation: S0|SpStSsSr. For example, GT is C|DDDC  and  Pavlov  is  C|CDDC.  Since  a  strategy  is  denoted  by S0|SpStSsSr which  have  five  bits and each slot encoded by either C or D, therefore, there are a total of 32 possible strategies in the strategy space Ms IPD with one step memory. 
 ## One-step memory results
 
-![Image 2](HitMapColors.png)
+![Image 2](mainResault.png)
 ![Image 3](IPD.svg)
 ## Random One-step memory
 ## Random One-step memory results
