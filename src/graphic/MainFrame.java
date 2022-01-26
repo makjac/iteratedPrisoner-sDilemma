@@ -12,7 +12,7 @@ public class MainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	JButton startBut = new JButton("start");
-	Game game = new Game(100);
+	Game game = new Game();
 	Hitmap hm = new Hitmap();
 	
 	public MainFrame()

@@ -30,8 +30,28 @@ For IPD with one step memory, each strategy can be specified by the response (C 
 ((“my  move”      “opponent’s  move”)=DD,  DC,  CD,CC)  with  the  immediate  payoffs  P,  T,  S  and  R, respectively. In the context of one step memory, a player can recall his opponent's and his own strategy in  the  past  one  round.  They  can  have  responses  in  terms  of  strategy  ࣭Sp, St, Ss and Sr  for  the  DD, DC,  CD  and  CC  in  the  previous  step  respectively.  Together  with  the  initial  move S0,  we  can  encode  the strategy of IPD with one step memory by the following notation: S0|SpStSsSr. For example, GT is C|DDDC  and  Pavlov  is  C|CDDC.  Since  a  strategy  is  denoted  by S0|SpStSsSr which  have  five  bits and each slot encoded by either C or D, therefore, there are a total of 32 possible strategies in the strategy space Ms IPD with one step memory. 
 ## One-step memory results
 
+After performing the calculations, the program presents the result as a heatmap. Where each row of the heatmap represents a player's tactic (for example, the first row is AllC: CCCCC), and each column represents an opponent's tactic. Each cell crosses two tactics with each other and the color it contains represents the player's total score from the 10 rounds taken between the two strategies. The darker the color, the worse it is for the player, because it tells you that he got more years of jail time in that particular skirmish.
+
 ![Image 2](mainResault.png)
-![Image 3](IPD.svg)
+
+The program also Saves the result as a matrix to a file named "mainData.txt". I further analyzed the data using Excel.
+
+- How are kind strategies (those that start with C) doing?
+
+Polite strategies collectively earned 21927 years of jail time, averaging 1370 years per strategy. Polite tactics collectively earned 20638 years, which averages them 1289 years per single tactic.
+
+Polite strategies perform worse than malicious strategies. The reason for this may be that when such a polite tactic is measured against a malicious one, the polite strategy gets 10 years in prison to boot.
+
+![Image 3](question1.png)
+
+- How do strategies that respond to an opponent's betrayal in the past fare? And how do those that respond to betrayal with cooperation?
+
+Strategies that respond to an opponent's betrayal with treachery do much better than those that respond to betrayal with cooperation. This is because some strategies take advantage of the naivety of tactics that respond with cooperation by always betraying them.
+![Image 4](question2.png)
+
+![Image 5](IPD.svg)
+
+In the chart, I have presented how the development of each strategy looks like.
 ## Random One-step memory
 ## Random One-step memory results
 
