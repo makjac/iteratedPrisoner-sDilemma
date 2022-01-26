@@ -47,6 +47,7 @@ Polite strategies perform worse than malicious strategies. The reason for this m
 - How do strategies that respond to an opponent's betrayal in the past fare? And how do those that respond to betrayal with cooperation?
 
 Strategies that respond to an opponent's betrayal with treachery do much better than those that respond to betrayal with cooperation. This is because some strategies take advantage of the naivety of tactics that respond with cooperation by always betraying them.
+
 ![Image 4](question2.png)
 
 ![Image 5](IPD.svg)
