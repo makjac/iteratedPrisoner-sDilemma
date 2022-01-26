@@ -34,7 +34,7 @@ After performing the calculations, the program presents the result as a heatmap.
 
 ![Image 2](mainResault.png)
 
-The program also Saves the result as a matrix to a file named "mainData.txt". I further analyzed the data using Excel.
+The program also Saves the result as a matrix to a file named "mainData.txt". I further analyzed the data using Libre calc.
 
 - How are kind strategies (those that start with C) doing?
 
