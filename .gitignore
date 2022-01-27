@@ -1,5 +1,11 @@
 mainData.txt
 RandomData.txt
+0RandomData.txt
+20RandomData.txt
+40RandomData.txt
+60RandomData.txt
+80RandomData.txt
+100RandomData.txt
 src/strategies/
 src/graphic/HistoryBar.java
 src/IPD/Player.java
